@@ -1,0 +1,109 @@
+$urba: #FCFAFA;
+$orga: #C8D3D5;
+$objet: #A4B8C4;
+$enjeux: #6E8387;
+$typo: 'Avenir';
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/AvenirLTStdMedium.eot');
+    src: url('../fonts/AvenirLTStdMedium.eot') format('embedded-opentype'),
+         url('../fonts/AvenirLTStdMedium.woff2') format('woff2'),
+         url('../fonts/AvenirLTStdMedium.woff') format('woff'),
+         url('../fonts/AvenirLTStdMedium.ttf') format('truetype'),
+         url('../fonts/AvenirLTStdMedium.svg#AvenirLTStdMedium') format('svg');
+
+    font-weight: normal;
+}
+
+
+
+body {
+	margin: 0;
+	width: 500%;
+	font-family: $typo;
+}
+
+.container {
+	min-width: 1000px;
+	width: 80%;
+	margin: auto;
+	display: block;
+}
+
+#menu {
+	height: 50px;
+	background: #2b2b2b;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	.container {
+		width: 800px;
+
+		ul {
+			width: 100%;
+			display: table;
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: table-cell;
+				padding: 0 10px;
+
+				&:first-child {
+					border: none;
+				}
+
+				a {
+					text-decoration: none;
+					height: 50px;
+					color: #fff;
+					text-transform: uppercase;
+					text-align: center;
+					font-size: 12px;
+					letter-spacing: 0.1em;
+					position: relative;
+					top: 1px;
+					display: table;
+					font-family: $typo;
+					width: 100%;
+
+					span {
+						display: table-cell;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+}
+
+.chapitre {
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	height: 2000px;
+
+	.section {
+		box-sizing: border-box;
+		padding: 50px 0 0 0;
+	}
+}
+
+#urba {
+	background: $urba;
+}
+
+#orga {
+	background: $orga;
+}
+
+#objet {
+	background: $objet;
+}
+
+#enjeux {
+	background: $enjeux;
+}
