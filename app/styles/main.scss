@@ -1,19 +1,102 @@
+/* VARIABLES */
+
 $urba: #FCFAFA;
-$orga: #C8D3D5;
-$objet: #A4B8C4;
-$enjeux: #6E8387;
+$orga: #FCFAFA;
+$objet: #FCFAFA;
+$enjeux: #FCFAFA;
 $typo: 'Avenir';
+$typo2: 'montserrat';
+$nombreCategorie: 5;
+$width: 100 / $nombreCategorie;
+
+
+/* TYPO */
 
 @font-face {
     font-family: 'Avenir';
-    src: url('../fonts/AvenirLTStdMedium.eot');
-    src: url('../fonts/AvenirLTStdMedium.eot') format('embedded-opentype'),
-         url('../fonts/AvenirLTStdMedium.woff2') format('woff2'),
-         url('../fonts/AvenirLTStdMedium.woff') format('woff'),
-         url('../fonts/AvenirLTStdMedium.ttf') format('truetype'),
-         url('../fonts/AvenirLTStdMedium.svg#AvenirLTStdMedium') format('svg');
+    src: url('../fonts/avenir/AvenirLTStdMedium.eot');
+    src: url('../fonts/avenir/AvenirLTStdMedium.eot') format('embedded-opentype'),
+         url('../fonts/avenir/AvenirLTStdMedium.woff2') format('woff2'),
+         url('../fonts/avenir/AvenirLTStdMedium.woff') format('woff'),
+         url('../fonts/avenir/AvenirLTStdMedium.ttf') format('truetype'),
+         url('../fonts/avenir/AvenirLTStdMedium.svg#AvenirLTStdMedium') format('svg');
 
     font-weight: normal;
+}
+
+/* BOLD */
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/montserrat/montserrat-bold-webfont.eot');
+    src: url('../fonts/montserrat/montserrat-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/montserrat/montserrat-bold-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat/montserrat-bold-webfont.woff') format('woff'),
+         url('../fonts/montserrat/montserrat-bold-webfont.ttf') format('truetype'),
+         url('../fonts/montserrat/montserrat-bold-webfont.svg#montserratbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* REGULAR */
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/montserrat/montserrat-regular-webfont.eot');
+    src: url('../fonts/montserrat/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/montserrat/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat/montserrat-regular-webfont.woff') format('woff'),
+         url('../fonts/montserrat/montserrat-regular-webfont.ttf') format('truetype'),
+         url('../fonts/montserrat/montserrat-regular-webfont.svg#montserratregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* ANIMATIONS */
+
+
+/* PRE-HOME */
+@keyframes translateTop {
+  0% { transform: translateY(0); }
+  100% { 
+  	transform: translateY(-678px);
+  }
+}
+
+@-webkit-keyframes translateTop {
+  0% { transform: translateY(0); }
+  100% { 
+  	transform: translateY(-678px);
+  }
+}
+
+@-moz-keyframes translateTop {
+  0% { transform: translateY(0); }
+  100% { 
+  	transform: translateY(-678px);
+  }
+}
+
+/* MENU */
+@keyframes appearMenu {
+  0% { height: 0px; }
+  100% { 
+  	height: 50px;
+  }
+}
+
+@-webkit-keyframes appearMenu {
+  0% { height: 0px; }
+  100% { 
+  	height: 50px;
+  }
+}
+
+@-moz-keyframes appearMenu {
+  0% { height: 0px; }
+  100% { 
+  	height: 50px;
+  }
 }
 
 
@@ -24,6 +107,56 @@ body {
 	font-family: $typo;
 }
 
+#pre-home {
+	width: 100%;
+	background: url('../images/bg_pre_home.jpg') no-repeat 0 0;
+	background-size: cover;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+	display: table;
+
+	div {
+		display: table-cell;
+		vertical-align: middle;
+
+		p {
+			text-align: center;
+			color: #FFF;
+			font-size: 30px;
+			text-transform: uppercase;
+			font-family: $typo2;
+			font-weight: 700;
+		}
+
+		a {
+			display: block;
+			width: 55px;
+			height: 30px;
+			margin: auto;
+			cursor: pointer;
+			background: url('../images/arrow_pre_home.png') no-repeat 0 0;
+
+			transition: all 0.4s 0;
+			-webkit-transition: all 0.4s 0;
+			-moz-transition: all 0.4s 0;
+
+			&:hover {
+				transform: translateY(10px);
+			}
+		}
+	}
+}
+
+#pre-home.translateTop {
+	-webkit-animation: translateTop 1s 0s forwards; /* Safari 4+ */
+	-moz-animation:    translateTop 1s 0s forwards; /* Fx 5+ */
+	-o-animation:      translateTop 1s 0s forwards; /* Opera 12+ */
+	animation:         translateTop 1s 0s forwards; /* IE 10+, Fx 29+ */
+}
+
 .container {
 	min-width: 1000px;
 	width: 80%;
@@ -32,7 +165,7 @@ body {
 }
 
 #menu {
-	height: 50px;
+	height: 0px;
 	background: #2b2b2b;
 	position: fixed;
 	top: 0;
@@ -44,13 +177,14 @@ body {
 
 		ul {
 			width: 100%;
-			display: table;
 			margin: 0;
 			padding: 0;
 
 			li {
-				display: table-cell;
+				display: inline-block;
+				vertical-align: middle;
 				padding: 0 10px;
+				margin: 0 48px;
 
 				&:first-child {
 					border: none;
@@ -60,24 +194,72 @@ body {
 					text-decoration: none;
 					height: 50px;
 					color: #fff;
+					display: block;
 					text-transform: uppercase;
 					text-align: center;
 					font-size: 12px;
 					letter-spacing: 0.1em;
 					position: relative;
 					top: 1px;
-					display: table;
 					font-family: $typo;
 					width: 100%;
+					padding-top: 18px;
+					box-sizing: border-box;
+
+					&::after {
+						content: '';
+						width: 0%;
+						height: 2px;
+						background: #FFF;
+						position: absolute;
+						bottom: 13px;
+						left: 0;
+
+						transition: all 0.4s 0s;
+						-webkit-transition: all 0.4s 0s;
+						-moz-transition: all 0.4s 0s;
+					}
+
+					&:hover::after {
+						width: 100%;
+					}
+
+					&.active::after {
+						width: 100%;
+					} 
 
 					span {
 						display: table-cell;
 						vertical-align: middle;
+
+						span {
+							margin-right: 40px;
+							display: inline-block;
+							position: relative;
+
+							&::after {
+								content: '';
+								position: absolute;
+								top: -15px;
+								right: -30px;
+								background: url('../images/picto_ville.png') no-repeat 0 0;
+								display: block;
+								width: 21px;
+								height: 38px;
+							}
+						}
 					}
 				}
 			}
 		}
 	}
+}
+
+#menu.appear {
+	-webkit-animation: appearMenu 1s 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards; /* Safari 4+ */
+	-moz-animation:    appearMenu 1s 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards; /* Fx 5+ */
+	-o-animation:      appearMenu 1s 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards; /* Opera 12+ */
+	animation:         appearMenu 1s 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards; /* IE 10+, Fx 29+ */
 }
 
 .chapitre {
@@ -88,7 +270,24 @@ body {
 
 	.section {
 		box-sizing: border-box;
-		padding: 50px 0 0 0;
+		padding: 50px 100px;
+
+		h2 {
+			color: #4D4D4D;
+			text-transform: uppercase;
+			font-family: $typo2;
+			font-size: 30px;
+			font-weight: 700;
+			text-align: center;
+		}
+
+		p {
+			color: #4D4D4D;
+			font-family: $typo2;
+			font-size: 12px;
+			font-weight: 300;
+			text-align: center;
+		}
 	}
 }
 
