@@ -1,0 +1,39 @@
+.block{
+	position: relative;
+	margin:auto;
+	padding: 2px;
+	height:100%;
+	//display: block;
+	width:100%;
+}
+.old{
+	position: absolute;
+	left:0;
+	background: #FFF;
+	display: block;
+}
+.new{
+	position:absolute;
+	left: 0;
+	z-index:1;
+	background: #FFF;
+	display: block;
+	overflow: hidden;
+}
+.block p {
+	-webkit-text-overflow :Clipped overflow;
+	text-overflow: Clipped;
+	height:60px;
+}
+.newImg{
+	margin:auto;
+		overflow: hidden;
+}
+.separator{
+	position: absolute;
+	width:5px;
+	height:100%;
+	background: #000;
+	opacity: 0.8;
+	z-index: 2;
+}
