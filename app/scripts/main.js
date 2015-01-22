@@ -24,7 +24,7 @@ $(document).ready(function() {
 	var hDesktop = window.innerHeight;
 	var section = $('.section');
 	var wSection = $('.section').width();
-	var way = -50;
+	var way = 0;
 	
 	section.css('height', hDesktop);
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
 
 	/* NAVIGATION CLAVIER */
-$(document).keydown(function(e) {
+$(document).keyup(function(e) {
 	console.log(way);
     switch (e.which) {
      case 40:
@@ -88,7 +88,7 @@ $(document).keydown(function(e) {
 });
 
 function down() {
-	way = hDesktop + way;
+	way = hDesktop + way - 50;
 	$('html, body').animate({
 	    scrollTop: way
 	}, 500);
@@ -96,7 +96,7 @@ function down() {
 }
 
 function up() {
-	way = way - hDesktop;
+	way = way - hDesktop + 50;
 	$('html, body').animate({
 	    scrollTop: way
 	}, 500);
