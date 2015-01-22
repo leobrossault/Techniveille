@@ -1,4 +1,4 @@
-.block{
+	.block{
 	position: relative;
 	margin:auto;
 	padding: 2px;
@@ -14,6 +14,7 @@
 }
 .new{
 	position:absolute;
+	width:50%;
 	left: 0;
 	z-index:1;
 	background: #FFF;
@@ -26,14 +27,33 @@
 	height:60px;
 }
 .newImg{
-	margin:auto;
-		overflow: hidden;
+	overflow-x: hidden;
+	
+}
+.oldImg{
+	display: block;
+	margin:auto;	
+}
+.newContent{
+	height: 60px;
+	overflow: hidden;
 }
 .separator{
 	position: absolute;
+	left:50%;
 	width:5px;
 	height:100%;
 	background: #000;
-	opacity: 0.8;
+	opacity: 0.5;
 	z-index: 2;
+}
+.circle{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: #000;
+	left:-13px;
+	top:50%;
+	
+	border-radius: 30px;
 }

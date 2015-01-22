@@ -1,3 +1,9 @@
+window.onload = function(){
+		/* PLACEMENT DES IMAGE DE LA NAV */
+		//$('.newImg').offset().left = $('.oldImg').offset().left;
+		$( ".newImg" ).css( "margin-left", $('.oldImg').offset().left) ;
+		//console.log('Je suis al \n + ' + $('.oldImg').offset().left );
+}
 $(document).ready(function() {
 	/* PRE-HOME */
 	var arrow = $('#pre-home a');
@@ -60,10 +66,6 @@ $(document).ready(function() {
  		 }
 
 	});
-	/***
-	$( '.separator' ).on( "drag", function( event, ui ) {
-		$('.new').width($( '.separator' ).position().x);
-	} );**/
-	
+
 
 });
