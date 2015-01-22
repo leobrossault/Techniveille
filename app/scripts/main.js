@@ -24,6 +24,7 @@ $(document).ready(function() {
 	var hDesktop = window.innerHeight;
 	var section = $('.section');
 	var wSection = $('.section').width();
+	var way = -50;
 	
 	section.css('height', hDesktop);
 
@@ -71,6 +72,36 @@ $(document).ready(function() {
  		 }
 
 	});
+
+
+	/* NAVIGATION CLAVIER */
+$(document).keydown(function(e) {
+	console.log(way);
+    switch (e.which) {
+     case 40:
+     	down();
+        break;
+     case 38:
+        up();
+        break;
+    }
+});
+
+function down() {
+	way = hDesktop + way;
+	$('html, body').animate({
+	    scrollTop: way
+	}, 500);
+	return false;	
+}
+
+function up() {
+	way = way - hDesktop;
+	$('html, body').animate({
+	    scrollTop: way
+	}, 500);
+	return false;
+}
 
 	/* CENTRER IMAGE */
 
