@@ -24,7 +24,8 @@ $(document).ready(function() {
 	var hDesktop = window.innerHeight;
 	var section = $('.section');
 	var wSection = $('.section').width();
-	var way = 0;
+	var wayH = 2*window.innerWidth;
+	var wayV =0;
 	
 	section.css('height', hDesktop);
 
@@ -73,32 +74,69 @@ $(document).ready(function() {
 
 	});
 
-
+window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
 	/* NAVIGATION CLAVIER */
-$(document).keyup(function(e) {
-	console.log(way);
+$(document).keydown(function(e) {
+
+	if(wayH<0){
+		wayH =0;
+	}
+	if(wayH> 3*window.innerWidth){
+		wayH = 3*window.innerWidth
+	}
+	if(wayV<0){
+		wayV =0;
+	}
+	if(wayV>=2*window.innerWidth){
+		wayV = 2*window.innerWidth
+	}
+	
     switch (e.which) {
      case 40:
-     	down();
-        break;
+		down();
+       break;
+     case 39:
+    	 right();
+       break;
      case 38:
         up();
         break;
+     case 37:
+     	left();
+     	break;
     }
+    console.log('Vertical : ' + wayV +'\n Horizontal : ' + wayH);
 });
-
-function down() {
-	way = hDesktop + way - 50;
+function left() {
+	wayH -= window.innerWidth;
 	$('html, body').animate({
-	    scrollTop: way
+	    scrollLeft: wayH
 	}, 500);
 	return false;	
 }
-
-function up() {
-	way = way - hDesktop + 50;
+function down() {
+	wayV += window.innerHeight;
 	$('html, body').animate({
-	    scrollTop: way
+	    scrollTop: wayV
+	}, 500);
+	return false;	
+}
+function right() {
+	wayH += window.innerWidth;
+	$('html, body').animate({
+	    scrollLeft: wayH
+	}, 500);
+	return false;	
+}
+function up() {
+	wayV -= window.innerHeight;
+	$('html, body').animate({
+	    scrollTop: wayV
 	}, 500);
 	return false;
 }
