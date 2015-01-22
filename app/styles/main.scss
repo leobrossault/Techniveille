@@ -60,26 +60,26 @@ $width: 100 / $nombreCategorie;
 
 
 /* PRE-HOME */
-@keyframes translateTop {
-  0% { transform: translateY(0); }
-  100% { 
-  	transform: translateY(-678px);
-  }
-}
+// @keyframes translateTop {
+//   0% { transform: translateY(0); }
+//   100% { 
+//   	transform: translateY(-678px);
+//   }
+// }
 
-@-webkit-keyframes translateTop {
-  0% { transform: translateY(0); }
-  100% { 
-  	transform: translateY(-678px);
-  }
-}
+// @-webkit-keyframes translateTop {
+//   0% { transform: translateY(0); }
+//   100% { 
+//   	transform: translateY(-678px);
+//   }
+// }
 
-@-moz-keyframes translateTop {
-  0% { transform: translateY(0); }
-  100% { 
-  	transform: translateY(-678px);
-  }
-}
+// @-moz-keyframes translateTop {
+//   0% { transform: translateY(0); }
+//   100% { 
+//   	transform: translateY(-678px);
+//   }
+// }
 
 /* MENU */
 @keyframes appearMenu {

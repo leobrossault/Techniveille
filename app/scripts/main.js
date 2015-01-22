@@ -1,7 +1,7 @@
 window.onload = function(){
 		/* PLACEMENT DES IMAGE DE LA NAV */
 		//$('.newImg').offset().left = $('.oldImg').offset().left;
-		$( ".newImg" ).css( "margin-left", $('.oldImg').offset().left) ;
+		//$( ".newImg" ).css( "margin-left", $('.oldImg').offset().left) ;
 		$( ".newContent" ).css( "width",  $('.oldContent').width()) ;
 		//console.log('Je suis al \n + ' + $('.oldImg').offset().left );
 }
@@ -18,11 +18,13 @@ $(document).ready(function() {
 	})
 
 
+
 	/* NAVIGATION */
 	var xStart = 0;
 	var hDesktop = window.innerHeight;
 	var section = $('.section');
-	console.log('Arthur est un maître pour moi. \n Je m\'excuse pour le CSS. \n Léo qui t\'aime.');
+	var wSection = $('.section').width();
+	
 	section.css('height', hDesktop);
 
 	window.onmousewheel = document.onmousewheel = function(e) {
@@ -48,8 +50,10 @@ $(document).ready(function() {
 
 
 	function start() {
-		var hPreHome = $('#pre-home').height();
-		$('#pre-home').addClass('translateTop');
+		var hPreHome = "-"+$('#pre-home').height();
+		$( "#pre-home" ).animate({
+		    marginTop: hPreHome
+		  }, 700 );
 		$('#menu').addClass('appear');
 	}
 
@@ -68,5 +72,20 @@ $(document).ready(function() {
 
 	});
 
+	/* CENTRER IMAGE */
 
+	$(".chapitre img").each(function(i){
+		var imgWidth = $(this).width();
+		$(this).css({
+			width: imgWidth
+		});
+	});
+
+	$(".chapitre .newImgContainer").each(function(i){
+		$(this).css({
+			width: wSection
+		});
+	});
+
+	
 });
