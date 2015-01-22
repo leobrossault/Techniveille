@@ -2,6 +2,7 @@ window.onload = function(){
 		/* PLACEMENT DES IMAGE DE LA NAV */
 		//$('.newImg').offset().left = $('.oldImg').offset().left;
 		$( ".newImg" ).css( "margin-left", $('.oldImg').offset().left) ;
+		$( ".newContent" ).css( "width",  $('.oldContent').width()) ;
 		//console.log('Je suis al \n + ' + $('.oldImg').offset().left );
 }
 $(document).ready(function() {
