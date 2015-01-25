@@ -115,6 +115,12 @@ img {
 	max-width: 1000px;
 }
 
+iframe {
+	width: 900px;
+	margin: auto;
+	display: block;
+}
+
 #pre-home {
 	width: 100%;
 	background: url('../images/bg_pre_home.jpg') no-repeat 0 0;
@@ -311,5 +317,9 @@ img {
 
 #objet {
 	background: $objet;
+}
+
+#enjeu3 .old img {
+	height: 500px;
 }
 
