@@ -17,10 +17,11 @@ gulp.task('styles', function () {
 
 gulp.task('jshint', function () {
   return gulp.src('app/scripts/**/*.js')
-    .pipe($.jshint())
+    .pipe($.jshint('.jshintrc'))
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.jshint.reporter('fail'));
 });
+
 
 gulp.task('html', ['styles'], function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
