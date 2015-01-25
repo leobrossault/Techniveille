@@ -17,9 +17,9 @@ gulp.task('styles', function () {
 
 gulp.task('jshint', function () {
   return gulp.src('app/scripts/**/*.js')
-    .pipe($.jshint('.jshintrc'))
+    .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.jshint.reporter('fail'));
+    .pipe($.size());
 });
 
 

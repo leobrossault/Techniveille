@@ -1,13 +1,8 @@
-'use strict';
+"use strict";
 
-window.onload = function(){
-		/* PLACEMENT DES IMAGE DE LA NAV */
-		//$('.newImg').offset().left = $('.oldImg').offset().left;
-		//$( '.newImg' ).css( 'margin-left', $('.oldImg').offset().left) ;
-		$( '.newContent' ).css( 'width',  $('.oldContent').width()) ;
-		//console.log('Je suis al \n + ' + $('.oldImg').offset().left );
-};
-$(document).ready(function() {
+
+$(window).ready(function() {
+	$( '.newContent' ).css( 'width',  $('.oldContent').width()) ;
 	function start() {
 		var hPreHome = '-'+$('#pre-home').height();
 		$( '#pre-home' ).animate({
@@ -93,15 +88,11 @@ $(document).keydown(function(e) {
 	if(wayH<0){
 		wayH =0;
 	}
-	if(wayH> 3*window.innerWidth){
-		wayH = 3*window.innerWidth;
-	}
+	
 	if(wayV<0){
 		wayV =0;
 	}
-	if(wayV>=3*window.innerHeight){
-		wayV = 3*window.innerHeight;
-	}
+	
 	
     switch (e.which) {
      case 40:
@@ -127,18 +118,24 @@ function left() {
 	return false;	
 }
 function down() {
+	if(wayV<4*window.innerHeight){
+
+	
 	wayV += window.innerHeight;
 	$('html, body').animate({
 	    scrollTop: wayV
 	}, 500);
 	return false;	
+	}
 }
 function right() {
-	wayH += window.innerWidth;
-	$('html, body').animate({
-	    scrollLeft: wayH
-	}, 500);
-	return false;	
+	if(wayH <4*window.innerWidth){
+		wayH += window.innerWidth;
+		$('html, body').animate({
+		    scrollLeft: wayH
+		}, 500);
+		return false;	
+	}
 }
 function up() {
 	wayV -= window.innerHeight;
