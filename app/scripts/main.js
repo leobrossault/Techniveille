@@ -99,8 +99,8 @@ $(document).keydown(function(e) {
 	if(wayV<0){
 		wayV =0;
 	}
-	if(wayV>=2*window.innerWidth){
-		wayV = 2*window.innerWidth;
+	if(wayV>=3*window.innerHeight){
+		wayV = 3*window.innerHeight;
 	}
 	
     switch (e.which) {
